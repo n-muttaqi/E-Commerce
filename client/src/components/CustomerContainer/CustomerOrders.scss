@@ -1,0 +1,91 @@
+.customer-orders-container {
+  margin-top: 30px;
+  color: #e5e7eb;
+  font-family: "Inter", system-ui, sans-serif;
+  background-color: transparent;
+
+  h2, h3 {
+    color: #f8fafc;
+    margin-bottom: 16px;
+  }
+
+  div {
+    margin-bottom: 10px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #0f172a; /* dark navy card */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+  }
+
+  th,
+  td {
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 0.95rem;
+  }
+
+  th {
+    background-color: #1e293b; /* slate header */
+    color: #94a3b8;
+    font-weight: 600;
+    border-bottom: 1px solid #334155;
+  }
+
+  td {
+    border-bottom: 1px solid #1e293b;
+    color: #e2e8f0;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #111827; /* alternate row */
+  }
+
+  tbody tr:hover {
+    background-color: #1e293b;
+    transition: background 0.2s ease;
+  }
+
+  tbody tr.selected {
+    background-color: #164e63; /* teal highlight */
+    color: #f0fdfa;
+  }
+
+  /* Rounded corners on first/last rows */
+  thead tr:first-child th:first-child {
+    border-top-left-radius: 10px;
+  }
+  thead tr:first-child th:last-child {
+    border-top-right-radius: 10px;
+  }
+  tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+  }
+  tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+  }
+
+  /* Button styling (Product List / Logout) */
+  button {
+    background: #1f86a9;
+    color: #f8fafc;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+
+    &:hover {
+      background: #18799a;
+      transform: translateY(-1px);
+    }
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}

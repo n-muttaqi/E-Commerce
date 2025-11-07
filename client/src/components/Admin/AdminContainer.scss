@@ -1,0 +1,124 @@
+/* AdminContainer.scss — Dark Modern */
+
+.admin-container {
+  padding: 24px;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: #e5e7eb;
+  background: transparent;
+
+  /* --- Action Buttons --- */
+  button {
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    background-color: #1f86a9;         /* teal-blue to match app */
+    color: #0b1220;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 8px 20px rgba(31, 134, 169, 0.28);
+    transition: background 0.2s ease, transform 0.06s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      background-color: #18799a;
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+  }
+
+  /* --- Tables --- */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    background-color: #0f172a;        /* dark navy background */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+  }
+
+  th,
+  td {
+    border-bottom: 1px solid #1e293b; /* subtle divider */
+    padding: 12px 14px;
+    text-align: left;
+    font-size: 0.95rem;
+  }
+
+  th {
+    background-color: #1e293b;        /* slate header */
+    color: #94a3b8;
+    font-weight: 600;
+    border-bottom: 1px solid #334155;
+  }
+
+  tr:nth-child(even) {
+    background-color: #111827;        /* alternate row */
+  }
+
+  tr:hover {
+    background-color: #1e293b;
+    transition: background 0.2s ease;
+  }
+
+  /* --- Detail Section --- */
+  .details-container {
+    margin-top: 24px;
+    background-color: #0f172a;
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+
+    h2, h3 {
+      color: #f8fafc;
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: #cbd5e1;
+      line-height: 1.5;
+    }
+  }
+
+  /* --- Inputs --- */
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="number"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 15px;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    background-color: #0b1220;
+    color: #e5e7eb;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+
+    &::placeholder {
+      color: #94a3b8;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: #38bdf8;
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
+    }
+  }
+
+  /* --- Utility / Spacing --- */
+  .mt-2 { margin-top: 8px; }
+  .mt-4 { margin-top: 16px; }
+  .mt-6 { margin-top: 24px; }
+}
