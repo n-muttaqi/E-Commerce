@@ -1,42 +1,70 @@
-/* AdminOrderList.css */
+/* AdminOrderList.css — Dark Modern (No White Borders) */
 
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: #0f172a;            /* dark navy card */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, .45);
+  border: none;
 }
 
+/* Cells */
 th,
 td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
+  padding: 12px 14px;
+  text-align: left;
+  font-size: 0.95rem;
+  color: #e5e7eb;
+
+  border: none;                         /* REMOVE white borders */
+  border-bottom: 1px solid #0d1525;     /* subtle dark divider */
 }
 
+/* Header */
 th {
-    background-color: #f2f2f2;
+  background-color: #1e293b;            /* slate dark header */
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+/* Zebra rows */
+tr:nth-child(odd) {
+  background-color: #020617;            /* very dark */
 }
 
 tr:nth-child(even) {
-    background-color: #f2f2f2;
+  background-color: #111827;            /* slightly lighter */
 }
 
+/* Hover */
 tr:hover {
-    background-color: #ddd;
-}
-td button {
-    display: block;
-    margin: 0 auto;
+  background-color: #1e293b;            /* same hover as other tables */
+  transition: background .2s ease;
 }
 
+/* Buttons inside cells */
+td button {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Action buttons */
 button {
-    padding: 8px 16px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    cursor: pointer;
+  padding: 8px 16px;
+  background-color: #22c55e;            /* green modern */
+  color: #022c22;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 8px 18px rgba(22,163,74,.25);
+  transition: background .15s ease, transform .06s ease, box-shadow .15s ease;
 }
 
 button:hover {
-    background-color: #45a049;
+  background-color: #16a34a;
+  transform: translateY(-1px);
 }

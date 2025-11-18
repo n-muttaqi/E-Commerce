@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { getBaseURL } from "../apiConfig";
-import "./ShoppingCart.scss"; // Import the CSS file
+import "./ShoppingCart.scss";
 
 const ShoppingCart = (props) => {
   const [cartProducts, setCartProducts] = useState(props.cartProducts);
@@ -10,24 +10,19 @@ const ShoppingCart = (props) => {
   useEffect(() => {
     axios
       .get(`${getBaseURL()}api/cart/${customerId}`)
-      .then((res) => {
-        let productsInCart = res.data;
-        setCartProducts(productsInCart);
-      })
-      .catch((err) => console.log("Error occurred"));
+      .then((res) => setCartProducts(res.data))
+      .catch(() => console.log("Error occurred"));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.cartProducts]);
-
-  const buyProducts = () => {
-    props.buyProducts();
-  };
 
   return (
     <>
       {cartProducts?.length > 0 ? (
         <>
           <h1>Shopping Cart</h1>
+
           <div>
+            {/* The table matches the updated SCSS */}
             <table className="shopping-cart-table">
               <thead>
                 <tr>
@@ -37,6 +32,7 @@ const ShoppingCart = (props) => {
                   <th>Remove</th>
                 </tr>
               </thead>
+
               <tbody>
                 {cartProducts.map((product) => (
                   <tr key={product.productId}>
@@ -44,11 +40,7 @@ const ShoppingCart = (props) => {
                     <td>{product.quantity}</td>
                     <td>{product.price * product.quantity}</td>
                     <td>
-                      <button
-                        onClick={() =>
-                          props.removeProduct(product.productId)
-                        }
-                      >
+                      <button onClick={() => props.removeProduct(product.productId)}>
                         Remove
                       </button>
                     </td>
@@ -56,6 +48,8 @@ const ShoppingCart = (props) => {
                 ))}
               </tbody>
             </table>
+
+            {/* Address + buy */}
             <div className="address-container">
               <input
                 type="text"
@@ -64,7 +58,8 @@ const ShoppingCart = (props) => {
                 value={props.address}
                 onChange={(e) => props.updateAddress(e.target.value)}
               />
-              <button className="buy-button" onClick={buyProducts}>
+
+              <button className="buy-button" onClick={props.buyProducts}>
                 Buy
               </button>
             </div>

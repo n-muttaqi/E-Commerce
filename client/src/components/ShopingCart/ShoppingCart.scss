@@ -1,45 +1,54 @@
-/* ShoppingCart.css — Dark Modern */
+/* ShoppingCart.css — Dark Modern (No White Borders) */
 
 .shopping-cart-table {
   width: 100%;
   border-collapse: collapse;
-  background: #0f172a;                 /* dark navy card */
+  background: #0f172a;            /* dark navy card */
   border-radius: 12px;
-  overflow: hidden;                     /* keep rounded corners */
+  overflow: hidden;
   box-shadow: 0 10px 25px rgba(0,0,0,.45);
   color: #e5e7eb;
   font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+  border: none;                   /* remove outer border */
 }
 
+/* Shared cell styling */
 .shopping-cart-table th,
 .shopping-cart-table td {
   padding: 12px 14px;
   text-align: left;
   font-size: 0.95rem;
-  border-bottom: 1px solid #1e293b;     /* subtle row divider */
+
+  border: none;                  /* remove all table borders */
+  border-bottom: 1px solid #0d1525;   /* darker divider to blend in */
 }
 
+/* Header */
 .shopping-cart-table th {
-  background: #1e293b;                  /* header slate */
+  background: #1e293b;
   color: #94a3b8;
   font-weight: 600;
-  border-bottom: 1px solid #334155;
+
+  border-bottom: 1px solid #0d1525;   /* same dark divider */
 }
 
+/* Even rows */
 .shopping-cart-table tbody tr:nth-child(even) {
-  background: #111827;                  /* zebra alt */
+  background: #111827;
 }
 
+/* Hover */
 .shopping-cart-table tbody tr:hover {
-  background: #1e293b;                  /* hover highlight */
+  background: #1e293b;
   transition: background .2s ease;
 }
 
-/* Remove/Trash button in cells */
+/* Remove button */
 .shopping-cart-table td button {
-  background: #b91c1c;                  /* dark red */
+  background: #b91c1c;
   color: #fef2f2;
-  border: 1px solid rgba(248,113,113,.25);
+  border: none;                         /* no border flash */
   padding: 8px 12px;
   border-radius: 10px;
   font-weight: 600;
@@ -52,22 +61,14 @@
   background: #991b1b;
   transform: translateY(-1px);
 }
-.shopping-cart-table td button:active {
-  transform: translateY(0);
-}
-.shopping-cart-table td button:disabled {
-  opacity: .6;
-  cursor: not-allowed;
-  box-shadow: none;
-}
 
-/* Address + Buy row */
+/* Address section */
 .address-container {
   display: flex;
   align-items: center;
   gap: 10px;
   padding-top: 14px;
-  flex-wrap: wrap;                      /* nicer on small screens */
+  flex-wrap: wrap;
 }
 
 .address-input {
@@ -75,7 +76,7 @@
   min-width: 220px;
   height: 44px;
   padding: 0 12px;
-  border: 1px solid #334155;            /* slate-700 */
+  border: none;                            /* remove default white border */
   border-radius: 10px;
   background: #0b1220;
   color: #e5e7eb;
@@ -87,15 +88,15 @@
   color: #94a3b8;
 }
 .address-input:focus {
-  border-color: #38bdf8;                /* cyan ring */
+  border: 1px solid #38bdf8;
   box-shadow: 0 0 0 3px rgba(56,189,248,.25);
 }
 
-/* Buy button (primary) */
+/* Buy button */
 .buy-button {
-  background: #1f86a9;                  /* teal-blue to match app */
+  background: #1f86a9;
   color: #0b1220;
-  border: 0;
+  border: none;
   padding: 12px 18px;
   border-radius: 10px;
   font-weight: 700;
@@ -104,20 +105,19 @@
   box-shadow: 0 10px 22px rgba(31,134,169,.28);
   white-space: nowrap;
 }
+
 .buy-button:hover {
   background: #18799a;
   transform: translateY(-1px);
 }
-.buy-button:active {
-  transform: translateY(0);
-}
+
 .buy-button:disabled {
   opacity: .6;
   cursor: not-allowed;
   box-shadow: none;
 }
 
-/* Responsive tweaks */
+/* Responsive */
 @media (max-width: 640px) {
   .shopping-cart-table th,
   .shopping-cart-table td {

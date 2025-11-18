@@ -1,10 +1,9 @@
-/* ProductListCustomer.css — Dark Modern */
+/* ProductListCustomer.css — Dark Modern (No White Borders) */
 
 * { box-sizing: border-box; }
 
 .product-list-container {
-  /* wrap block can be inside a page with dark bg already */
-  color: #1e61e9;
+  color: #e5e7eb;
   font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
@@ -13,32 +12,45 @@
   margin: 14px 0 16px;
   color: #f8fafc;
 }
-.randomColor{ 
- background: #0f172a
+
+/* Optional wrapper if you use it */
+.randomColor {
+  background: #020617;
 }
-/* Table */
+
+/* === TABLE === */
 .product-list-container table {
   width: 100%;
   border-collapse: collapse;
-  background: #0f172a;                 /* dark navy card */
+  background: #0f172a;           /* dark navy card */
   border-radius: 12px;
-  overflow: hidden;                     /* keep rounded corners */
+  overflow: hidden;
   box-shadow: 0 10px 25px rgba(0,0,0,.45);
+  border: none;                  /* no outer border */
 }
 
+/* Cells */
 .product-list-container th,
 .product-list-container td {
   padding: 12px 14px;
   text-align: left;
   font-size: 0.95rem;
-  border-bottom: 1px solid #1e293b;     /* subtle row divider */
+  color: #e5e7eb;
+
+  border: none;                         /* remove white borders */
+  border-bottom: 1px solid #0d1525;     /* very dark divider (not white) */
 }
 
+/* Header */
 .product-list-container th {
   background: #1e293b;                  /* header slate */
   color: #94a3b8;
   font-weight: 600;
-  border-bottom: 1px solid #334155;
+}
+
+/* Rows */
+.product-list-container tbody tr:nth-child(odd) {
+  background: #020617;                  /* dark row */
 }
 
 .product-list-container tbody tr:nth-child(even) {
@@ -50,7 +62,7 @@
   transition: background .2s ease;
 }
 
-/* Number input */
+/* === Number input === */
 .product-list-container input[type="number"] {
   width: 72px;
   padding: 8px 10px;
@@ -61,10 +73,9 @@
   font-size: 0.95rem;
   outline: none;
   transition: border-color .15s ease, box-shadow .15s ease;
-
-  /* remove spinners appearance differences */
   -moz-appearance: textfield;
 }
+
 .product-list-container input[type="number"]::-webkit-outer-spin-button,
 .product-list-container input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -80,7 +91,7 @@
   box-shadow: 0 0 0 3px rgba(56,189,248,.25);
 }
 
-/* Buttons */
+/* === Buttons === */
 .product-list-container button {
   background: #1f86a9;                  /* teal-blue like login */
   color: #0b1220;

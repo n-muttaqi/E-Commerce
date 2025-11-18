@@ -1,77 +1,94 @@
-// OrderDetails.scss
+/* OrderDetails.scss — Dark Modern */
 
 .order-details-container {
-    padding: 20px;
+  padding: 20px;
+  color: #e5e7eb;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 
-    div {
-        margin-bottom: 15px;
+  div {
+    margin-bottom: 15px;
+  }
+
+  label {
+    font-weight: 600;
+    color: #e2e8f0;
+  }
+
+  /* Read-only text fields */
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+
+    border: 1px solid #334155;        /* slate border */
+    background-color: #0b1220;        /* dark input bg */
+    color: #e5e7eb;
+    cursor: not-allowed;
+
+    box-sizing: border-box;
+  }
+
+  /* === TABLE === */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #0f172a;              /* dark navy card */
+    border-radius: 12px;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .45);
+
+    th,
+    td {
+      padding: 10px 12px;
+      text-align: left;
+      font-size: 0.95rem;
+      border: none;                        /* remove white borders */
+      border-bottom: 1px solid #0d1525;    /* subtle dark divider */
+      color: #e5e7eb;
     }
 
-    label {
-        font-weight: bold;
+    th {
+      background: #1e293b;                 /* slate header */
+      color: #94a3b8;
+      font-weight: 600;
     }
 
-    input[type="text"] {
-        width: 100%;
-        padding: 10px;
-        margin-top: 5px;
-        border: 1px solid #ccc;
-        border-radius: 3px;
-        box-sizing: border-box;
-        background-color: #f9f9f9;
-        color: #333;
-        cursor: not-allowed;
+    tr:nth-child(odd) {
+      background: #020617;                 /* dark row */
     }
 
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 20px;
-
-        th,
-        td {
-            border: 1px solid #ccc;
-            padding: 8px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-
-        tr:hover {
-            background-color: #f2f2f2;
-        }
+    tr:nth-child(even) {
+      background: #111827;                 /* alt row */
     }
 
-        /* OrderDetails.scss */
-    
-        .back-button-container {
-            margin-bottom: 20px;
-            /* Adjust margin as needed */
-        }
-    
-        .back-button-container button {
-            background-color: #007bff;
-            /* Button background color */
-            color: #fff;
-            /* Button text color */
-            border: none;
-            /* Remove button border */
-            padding: 10px 20px;
-            /* Add padding to button */
-            cursor: pointer;
-            /* Change cursor to pointer on hover */
-            border-radius: 5px;
-            /* Add border-radius to button */
-        }
-    
-        .back-button-container button:hover {
-            background-color: #0056b3;
-            /* Change background color on hover */
-        }
+    tr:hover {
+      background: #1e293b;                 /* consistent hover */
+      transition: background .2s ease;
+    }
+  }
+
+  /* === BACK BUTTON === */
+  .back-button-container {
+    margin-bottom: 20px;
+
+    button {
+      background: #1f86a9;                 /* teal-blue like theme */
+      color: #0b1220;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 8px;
+      font-weight: 600;
+      box-shadow: 0 8px 18px rgba(31,134,169,.28);
+      transition: background .15s ease, transform .06s ease, box-shadow .15s ease;
+    }
+
+    button:hover {
+      background: #18799a;
+      transform: translateY(-1px);
+    }
+  }
 }

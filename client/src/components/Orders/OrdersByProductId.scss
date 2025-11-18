@@ -1,30 +1,49 @@
-// OrdersByProductId.scss
+/* OrdersByProductId.scss — Dark Modern */
 
 .orders-by-product {
-    margin-top: 20px;
+  margin-top: 20px;
+  color: #e5e7eb;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 10px;
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
 
-        th,
-        td {
-            border: 1px solid #ccc;
-            padding: 8px;
-            text-align: left;
-        }
+    background: #0f172a;            /* dark navy card */
+    border-radius: 12px;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,.45);
 
-        th {
-            background-color: #f2f2f2;
-        }
+    th,
+    td {
+      padding: 12px 14px;
+      text-align: left;
+      font-size: 0.95rem;
 
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-
-        tr:hover {
-            background-color: #f2f2f2;
-        }
+      border: none;                         /* remove white borders */
+      border-bottom: 1px solid #0d1525;     /* subtle dark divider */
+      color: #e5e7eb;
     }
+
+    th {
+      background-color: #1e293b;            /* dark slate header */
+      color: #94a3b8;
+      font-weight: 600;
+    }
+
+    tr:nth-child(odd) {
+      background-color: #020617;            /* deep dark */
+    }
+
+    tr:nth-child(even) {
+      background-color: #111827;            /* alternate */
+    }
+
+    tr:hover {
+      background-color: #1e293b;            /* consistent hover */
+      transition: background .2s ease;
+    }
+  }
 }
