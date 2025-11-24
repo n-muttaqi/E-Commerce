@@ -1,30 +1,46 @@
 # E-Commerce Platform – Full Stack Web Application  
 Built with React, Node.js, Express, MySQL, JWT, and CSS
 
-A full-stack e-commerce platform that allows users to browse products, authenticate securely, manage their cart, and interact with a responsive React interface. Backend services handle authentication, product APIs, and database operations.
+A full-stack e-commerce platform that allows users to browse products, authenticate securely, manage their shopping cart, and complete essential store interactions. The system includes a React-based frontend for the user interface and a Node/Express/MySQL backend for data management, authentication, and API services.
 
 ---
 
 ## Features
 
+### What the Platform Does
+- Displays a list of products with pricing, images, and descriptions  
+- Allows users to register and log in securely using JWT authentication  
+- Lets authenticated users add products to a cart and adjust item quantities  
+- Stores cart items persistently in the MySQL database  
+- Shows cart totals, item breakdowns, and provides a smooth checkout workflow  
+- Protects specific routes and operations so only logged-in users can access them  
+- Ensures consistent data flow between frontend and backend through REST APIs  
+
+---
+
 ### Frontend (React)
-- Product browsing UI built with React components, hooks, and state management  
-- User authentication flow (login and register) integrated with the backend  
-- Dynamic product rendering with filtering and category support  
-- Cart functionality that updates quantities, totals, and item availability  
-- Protected routes for accessing user-specific pages  
-- Responsive CSS styling for a clean user experience  
+- Modular React components for product listings, product cards, layout, and cart  
+- React Router for navigation across pages (Home, Login, Cart, Products)  
+- State management for cart updates, user sessions, and product rendering  
+- Responsive CSS styling for clean display on desktop and mobile  
+- Integration with backend APIs for authentication and product data  
+- User session persistence through local storage  
+
+---
 
 ### Backend (Node.js + Express + MySQL)
-- REST API built using Express for products, authentication, and cart operations  
-- JWT-based authentication for secure login and protected endpoints  
+- REST API with endpoints for:
+  - User authentication (register and login)  
+  - Retrieving products  
+  - Managing cart operations (add, update, remove)  
+- JWT authentication with protected routes  
 - Password hashing for secure credential storage  
-- MySQL database for storing:
+- MySQL database for:
   - Users  
   - Products  
   - Cart items  
-- Centralized error handling and validation  
-- Environment-based configuration using `.env`  
+- Organized controller and route structure for scalability  
+- `.env` configuration for database credentials and JWT secrets  
 
 ---
 
