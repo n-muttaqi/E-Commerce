@@ -1,15 +1,35 @@
 /* AdminProductList.scss */
 
-/* Optional container styling (keeps your layout the same) */
+/* Container styling */
 .product-list-container {
   // padding: 20px;
   color: #e5e7eb;
   font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
-/* Add product form (left mostly as-is) */
-.add-product-section {
+/* Header section with form and logo side by side */
+.add-product-header {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
   margin-bottom: 20px;
+}
+
+/* Logo section styling */
+.logo-section {
+  flex-shrink: 0;
+}
+
+.company-logo {
+  width: 500px;
+  height: 500px;
+  object-fit: contain;
+}
+
+/* Add product form (left side of flex layout) */
+.add-product-section {
+  flex: 1;
+  min-width: 300px;
 }
 
 .add-product-section label {
@@ -18,17 +38,27 @@
   font-weight: 600;
 }
 
-.add-product-section input {
+.add-product-section input,
+.add-product-section textarea {
   width: calc(100% - 10px);
+  max-width: 400px;
   padding: 8px;
   margin-bottom: 10px;
   border-radius: 8px;
   border: 1px solid #334155;
   background: #020617;
   color: #e5e7eb;
+  font-family: inherit;
+  resize: vertical;
+  display: block;
 }
 
-.add-product-section input::placeholder {
+.add-product-section textarea {
+  height: 200px;
+}
+
+.add-product-section input::placeholder,
+.add-product-section textarea::placeholder {
   color: #64748b;
 }
 

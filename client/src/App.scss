@@ -1,7 +1,25 @@
+// App header with logo and logout button
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: transparent;
+}
+
+// Logo in upper left corner
+.logo-container {
+  flex-shrink: 0;
+}
+
+.ecommerce-logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
 // Add styling for login button
 .login-button {
-
-
   background-color: black;
   color: white;
   border: none;
@@ -13,7 +31,7 @@
 .login-button-container {
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 0;
   border-radius: 5px;
   cursor: pointer;
   display: flex;

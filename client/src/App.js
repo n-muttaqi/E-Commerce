@@ -2,6 +2,7 @@ import "./App.scss";
 import { useState } from "react";
 import LoginRegisterForm from "./components/LoginRegisterContainer/LoginRegisterContainer"
 import AdminCustomerContainer from "./components/AdminCustomerContainer/AdminCustomerContainer";
+import ecommerceLogo from "./ecommerceLogo.png";
 
 function App() {
   let [isUserAuthenticated, setUserAuthorization] = useState(
@@ -35,6 +36,10 @@ function App() {
         <LoginRegisterForm setUserAuthenticatedStatus={setUserAuthenticatedStatus} />
       ) : (
         <>
+          <div className="app-header">
+            <div className="logo-container">
+              <img src={ecommerceLogo} alt="E-Commerce Logo" className="ecommerce-logo" />
+            </div>
             <div className="login-button-container"><button
               onClick={handleLogout}
               // style={{
@@ -49,10 +54,10 @@ function App() {
             >
               Logout
             </button></div>
+          </div>
 
           <AdminCustomerContainer isAdmin={isAdmin} customerId={customerId} />
         </>
-
       )}
     </div>
   );

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { getBaseURL } from "../apiConfig";
 import "./AdminProductList.scss";
+import logo from "../../logo.svg";
 
 const ProductList = (props) => {
   const [products, setProducts] = useState([]);
@@ -54,38 +55,43 @@ const ProductList = (props) => {
 
   return (
     <div className="product-list-container">
-      <div className="add-product-section">
-        <label htmlFor="productName">Product Name:</label>
-        <input
-          type="text"
-          id="productName"
-          value={productName}
-          onChange={(e) => {
-            setProductName(e.target.value);
-          }}
-          placeholder="Product Name"
-        />
-        <label htmlFor="productPrice">Price:</label>
-        <input
-          type="number"
-          id="productPrice"
-          value={productPrice}
-          onChange={(e) => {
-            setProductPrice(e.target.value);
-          }}
-          placeholder="Price"
-        />
-        <label htmlFor="productDesc">Description:</label>
-        <input
-          type="text"
-          id="productDesc"
-          value={productDesc}
-          onChange={(e) => {
-            setProductDesc(e.target.value);
-          }}
-          placeholder="Description"
-        />
-        <button onClick={addProduct}>Add Product</button>
+      <div className="add-product-header">
+        <div className="add-product-section">
+          <label htmlFor="productName">Product Name:</label>
+          <input
+            type="text"
+            id="productName"
+            value={productName}
+            onChange={(e) => {
+              setProductName(e.target.value);
+            }}
+            placeholder="Product Name"
+          />
+          <label htmlFor="productPrice">Price:</label>
+          <input
+            type="number"
+            id="productPrice"
+            value={productPrice}
+            onChange={(e) => {
+              setProductPrice(e.target.value);
+            }}
+            placeholder="Price"
+          />
+          <label htmlFor="productDesc">Description:</label>
+          <textarea
+            id="productDesc"
+            value={productDesc}
+            onChange={(e) => {
+              setProductDesc(e.target.value);
+            }}
+            placeholder="Description"
+            rows={4}
+          />
+          <button onClick={addProduct}>Add Product</button>
+        </div>
+        <div className="logo-section">
+          <img src={logo} alt="Company Logo" className="company-logo" />
+        </div>
       </div>
       <div className="product-list">
         <h1>Product List</h1>
