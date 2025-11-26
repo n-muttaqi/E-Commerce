@@ -16,7 +16,7 @@ CREATE TABLE product (
     createdDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE shopingCart (
+CREATE TABLE shoppingcart (
 	userId INT(5),
     productId INT(5),
     quantity INT,
@@ -31,7 +31,7 @@ CREATE TABLE orders (
     createdDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE productsInOrder (
+CREATE TABLE productsinorder (
 	orderId INT(5),
     productId INT(5),
     quantity INT,
@@ -40,13 +40,16 @@ CREATE TABLE productsInOrder (
 );
 
 
-ALTER TABLE shopingCart
+ALTER TABLE shoppingCart
 ADD FOREIGN KEY (userId) REFERENCES users (userId),
 ADD FOREIGN KEY (productId) REFERENCES product (productId);
 
 ALTER TABLE orders
 ADD FOREIGN KEY (userId) REFERENCES users (userId);
 
-ALTER TABLE productsInOrder
+ALTER TABLE productsinorder
 ADD FOREIGN KEY (orderId) REFERENCES orders (orderId),
 ADD FOREIGN KEY (productId) REFERENCES product (productId);
+
+ALTER TABLE productsInOrder
+CHANGE totalPrice lineTotal DECIMAL(10,2);
